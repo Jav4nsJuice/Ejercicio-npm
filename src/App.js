@@ -3,11 +3,13 @@ const nombre = document.querySelector('#nombre-input');
 const form = document.querySelector('#saludador-form');
 const form_edad = document.querySelector('#saludador-con-edad-form');
 const form_genero = document.querySelector('#saludador-con-genero-form');
+const idioma = document.querySelector('#idioma-select')
 const edad = document.querySelector('#edad-input');
 const genero = document.querySelector('#genero-input');
 var hoy = new Date();
 const form_tiempo = document.querySelector('#saludador-con-tiempo-form');
-var hora = hoy.getHours()
+var hora = hoy.getHours();
+
 // alert(hora)
 
 // alert(nombre.value);
@@ -68,25 +70,51 @@ form_genero.addEventListener("submit", (event) =>{
 form_tiempo.addEventListener("submit", (event) => {
     if(edad.value <= 21){
         if(genero.value == "Masculino"){
-            if(hora>= 5 && hora < 12){
-                alert("Buenos Dias Joven " + nombre.value);
+            console.log("Entro");
+            if(hora >= 5 && hora < 12){
+                if(idioma.value == "espanol"){
+                    alert("Buenos Dias Joven " + nombre.value);
+                }else{
+                    alert("Good morning Boy " + nombre.value);
+                }
+            }else{
+                if(hora >= 12 && hora < 18){
+                    if(idioma.value == "espanol"){
+                        alert("Buenas Tardes Joven " + nombre.value);
+                    }else{
+                        alert("Good afternoon Boy " + nombre.value);
+                    }
+                }else{
+                    if(idioma.value == "espanol"){
+                        alert("Buenas Noches Joven " + nombre.value);
+                    }else{
+                        alert("Good evening Boy " + nombre.value);
+                    }
+                }
             }
-            if(hora >= 12 && hora < 18){
-                alert("Buenos Tardes Joven " + nombre.value);
-            }
-            if(hora >=18 && hora < 5){
-                alert("Buenos Noches Joven " + nombre.value);
-            }
+            
         }else{
             if(genero.value == "Femenino"){
                 if(hora>= 5 && hora < 12){
-                    alert("Buenos Dias Señorita " + nombre.value);
-                }
-                if(hora >= 12 && hora < 18){
-                    alert("Buenos Tardes Señorita " + nombre.value);
-                }
-                if(hora >=18 && hora < 5){
-                    alert("Buenos Noches Señorita " + nombre.value);
+                    if(idioma.value == "espanol"){
+                        alert("Buenos Dias Señorita " + nombre.value);
+                    }else{
+                        alert("Good morning Girl " + nombre.value);
+                    }
+                }else{
+                    if(hora >= 12 && hora < 18){
+                        if(idioma.value == "espanol"){
+                            alert("Buenas Tardes Señorita " + nombre.value);
+                        }else{
+                            alert("Good afternoon Girl " + nombre.value);
+                        }
+                    }else{
+                        if(idioma.value == "espanol"){
+                            alert("Buenas Noches Señorita " + nombre.value);
+                        }else{
+                            alert("Good evening Girl " + nombre.value);
+                        }
+                    }
                 }
             }else{
                 alert("Genero invalido. Inserte Masculino o Femenino");
@@ -96,24 +124,48 @@ form_tiempo.addEventListener("submit", (event) => {
         if(edad.value <=60){
             if(genero.value == "Masculino"){
                 if(hora>= 5 && hora < 12){
-                    alert("Buenos Dias Señor " + nombre.value);
-                }
-                if(hora >= 12 && hora < 18){
-                    alert("Buenos Tardes Señor " + nombre.value);
-                }
-                if(hora >=18 && hora < 5){
-                    alert("Buenos Noches Señor " + nombre.value);
+                    if(idioma.value == "espanol"){
+                        alert("Buenos Dias Señor " + nombre.value);
+                    }else{
+                        alert("Good morning Man " + nombre.value);
+                    }
+                }else{
+                    if(hora >= 12 && hora < 18){
+                        if(idioma.value == "espanol"){
+                            alert("Buenas Tardes Señor " + nombre.value);
+                        }else{
+                            alert("Good afternoon Man " + nombre.value);
+                        }
+                    }else{
+                        if(idioma.value == "espanol"){
+                            alert("Buenas Noches Señor " + nombre.value);
+                        }else{
+                            alert("Good evening Man " + nombre.value);
+                        }
+                    }
                 }
             }else{
                 if(genero.value == "Femenino"){
                     if(hora>= 5 && hora < 12){
-                        alert("Buenos Dias Señora " + nombre.value);
-                    }
-                    if(hora >= 12 && hora < 18){
-                        alert("Buenos Tardes Señora " + nombre.value);
-                    }
-                    if(hora >=18 && hora < 5){
-                        alert("Buenos Noches Señora " + nombre.value);
+                        if(idioma.value == "espanol"){
+                            alert("Buenos Dias Señora " + nombre.value);
+                        }else{
+                            alert("Good morning Woman " + nombre.value);
+                        }
+                    }else{
+                        if(hora >= 12 && hora < 18){
+                            if(idioma.value == "espanol"){
+                                alert("Buenas Tardes Señora " + nombre.value);
+                            }else{
+                                alert("Good afternoon Woman " + nombre.value);
+                            }
+                        }else{
+                            if(idioma.value == "espanol"){
+                                alert("Buenas Noches Señora " + nombre.value);
+                            }else{
+                                alert("Good evening Woman " + nombre.value);
+                            }
+                        }
                     }
                 }else{
                     alert("Genero invalido. Inserte Masculino o Femenino");
@@ -123,24 +175,48 @@ form_tiempo.addEventListener("submit", (event) => {
         else{
             if(genero.value == "Masculino"){
                 if(hora>= 5 && hora < 12){
-                    alert("Buenos Dias Don " + nombre.value);
-                }
-                if(hora >= 12 && hora < 18){
-                    alert("Buenos Tardes Don " + nombre.value);
-                }
-                if(hora >=18 && hora < 5){
-                    alert("Buenos Noches Don " + nombre.value);
+                    if(idioma.value == "espanol"){
+                        alert("Buenos Dias Don " + nombre.value);
+                    }else{
+                        alert("Good morning Mr. " + nombre.value);
+                    }
+                }else{
+                    if(hora >= 12 && hora < 18){
+                        if(idioma.value == "espanol"){
+                            alert("Buenas Tardes Don " + nombre.value);
+                        }else{
+                            alert("Good evening Mr. " + nombre.value);
+                        }
+                    }else{
+                        if(idioma.value == "espanol"){
+                            alert("Buenas Noches Don " + nombre.value);
+                        }else{
+                            alert("Good evening Mr. " + nombre.value);
+                        }
+                    }
                 }
             }else{
                 if(genero.value == "Femenino"){
                     if(hora>= 5 && hora < 12){
-                        alert("Buenos Dias Doña " + nombre.value);
-                    }
-                    if(hora >= 12 && hora < 18){
-                        alert("Buenos Tardes Doña " + nombre.value);
-                    }
-                    if(hora >=18 && hora < 5){
-                        alert("Buenos Noches Doña " + nombre.value);
+                        if(idioma.value == "espanol"){
+                            alert("Buenos Dias Doña " + nombre.value);
+                        }else{
+                            alert("Good morning Mrs. " + nombre.value);
+                        }
+                    }else{
+                        if(hora >= 12 && hora < 18){
+                            if(idioma.value == "espanol"){
+                                alert("Buenos Tardes Doña " + nombre.value);
+                            }else{
+                                alert("Good afternoon Mrs. " + nombre.value);
+                            }
+                        }else{
+                            if(idioma.value == "espanol"){
+                                alert("Buenas Noches Doña " + nombre.value);
+                            }else{
+                                alert("Good evening Mrs. " + nombre.value);
+                            }
+                        }
                     }
                 }else{
                     alert("Genero invalido. Inserte Masculino o Femenino");
@@ -149,3 +225,5 @@ form_tiempo.addEventListener("submit", (event) => {
         }
     }   
 });
+
+
